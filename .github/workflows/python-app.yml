@@ -24,6 +24,6 @@ jobs:
           pip install coverage
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Run tests
-        run: coverage run ./ArchiTanks/tests/tests.py
+        run: coverage run ArchiTanks/tests.py
       - name: Tests report
         run: coverage report
