@@ -21,9 +21,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install flake8 pytest
-          pip install coverage
+          
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Run tests
-        run: coverage run src/tests/tests.py
+        run: |
+          pip install coverage
+          export PYTHONPATH=ArchiTanks
+          coverage
       - name: Tests report
         run: coverage report
